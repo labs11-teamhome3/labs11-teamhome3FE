@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const URI =
 	process.env.NODE_ENV === 'production'
-		? 'https://labs-manaje.herokuapp.com/'
+		? 'https://labs-manaje.herokuapp.com/graphql'
 		: 'http://localhost:5000/graphql';
 
 const client = new ApolloClient({
