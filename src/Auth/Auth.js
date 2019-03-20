@@ -13,7 +13,7 @@ const options = {
 	},
 	auth: {
 		sso: false,
-		audience: 'https://team-home-2-graphql-mongodb.herokuapp.com/'
+		audience: 'https://labs-manaje.herokuapp.com/'
 	},
 	responseType: 'token id_token'
 };
