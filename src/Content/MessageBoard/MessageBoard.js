@@ -20,16 +20,16 @@ import { MenuItem } from '@material-ui/core';
 
 const styles = theme => ({
 	root: {
-		backgroundColor: colors.background,
+		backgroundColor: colors.background
 	},
 	fab: {
-		margin: theme.spacing.unit,
+		margin: theme.spacing.unit
 	},
 	styledTooltip: {
 		fontSize: '12px',
 		backgroundColor: colors.button,
-		color: colors.text,
-	},
+		color: colors.text
+	}
 });
 
 // ---------------- Styled Components ---------------------- //
@@ -101,7 +101,7 @@ const SortForm = styled.form`
 `;
 
 const StyledOutline = styled(OutlinedInput).attrs(() => ({
-	labelWidth: 10,
+	labelWidth: 10
 }))`
 	height: 30px;
 	border-radius: 5px;
@@ -129,7 +129,7 @@ class MessageBoard extends React.Component {
 			userListOpen: false,
 			isAdmin: false,
 			sortOption: 'newest',
-			teamName: props.team.name,
+			teamName: props.team.name
 		};
 	}
 
@@ -149,7 +149,7 @@ class MessageBoard extends React.Component {
 	toggleMessageDetail = msg => {
 		this.setState(prevState => ({
 			messageDetailOpen: !prevState.messageDetailOpen,
-			currentMessage: msg,
+			currentMessage: msg
 		}));
 	};
 
@@ -167,13 +167,13 @@ class MessageBoard extends React.Component {
 							<label>
 								Sort:
 								<StyledSelect
-									outlined='true'
+									outlined="true"
 									value={this.state.sortOption}
 									onChange={this.sortChange}
-									input={<StyledOutline name='Sort' />}
+									input={<StyledOutline name="Sort" />}
 								>
-									<MenuItem value='newest'>Newest First</MenuItem>
-									<MenuItem value='oldest'>Oldest First</MenuItem>
+									<MenuItem value="newest">Newest First</MenuItem>
+									<MenuItem value="oldest">Oldest First</MenuItem>
 								</StyledSelect>
 							</label>
 						</SortForm>
@@ -229,7 +229,7 @@ class MessageBoard extends React.Component {
 }
 
 MessageBoard.propTypes = {
-	classes: PropTypes.object.isRequired,
+	classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(MessageBoard);

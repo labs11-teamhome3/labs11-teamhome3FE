@@ -4,17 +4,18 @@ import { colors } from '../colorVariables';
 // 'options' object contains Auth0 Lock-specific features to customize the Auth0 widget.
 const options = {
 	theme: {
-		logo: 'https://res.cloudinary.com/ddr545gbo/image/upload/v1552520382/arq-logo.png',
-		primaryColor: colors.button,
+		logo:
+			'https://res.cloudinary.com/ddr545gbo/image/upload/v1552520382/arq-logo.png',
+		primaryColor: colors.button
 	},
 	languageDictionary: {
-		title: 'Arq',
+		title: 'Arq'
 	},
 	auth: {
 		sso: false,
-		audience: 'https://labs-manaje.herokuapp.com/',
+		audience: 'https://labs-manaje.herokuapp.com/'
 	},
-	responseType: 'token id_token',
+	responseType: 'token id_token'
 };
 
 /**
@@ -27,22 +28,22 @@ export default class Auth0 {
 	lock = new Auth0Lock(
 		process.env.REACT_APP_AUTH0_CLIENT_ID,
 		process.env.REACT_APP_AUTH0_DOMAIN,
-		options,
+		options
 	);
 
 	login() {
 		this.lock.show({
-			allowedConnections: [ 'facebook', 'google-oauth2' ],
+			allowedConnections: ['facebook', 'google-oauth2'],
 			initialScreen: 'login',
-			sso: false,
+			sso: false
 		});
 	}
 
 	signUp() {
 		this.lock.show({
-			allowedConnections: [ 'facebook', 'google-oauth2' ],
+			allowedConnections: ['facebook', 'google-oauth2'],
 			initialScreen: 'signUp',
-			sso: false,
+			sso: false
 		});
 	}
 }

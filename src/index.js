@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const URI =
 	process.env.NODE_ENV === 'production'
-		? 'https://labs-manaje.herokuapp.com/graphql'
+		? 'https://labs-manaje.herokuapp.com/'
 		: 'http://localhost:5000/graphql';
 
 const client = new ApolloClient({
@@ -19,10 +19,10 @@ const client = new ApolloClient({
 		operation.setContext(context => ({
 			headers: {
 				...context.headers,
-				authorization: localStorage.getItem('token'),
-			},
+				authorization: localStorage.getItem('token')
+			}
 		}));
-	},
+	}
 });
 
 ReactDOM.render(
@@ -31,7 +31,7 @@ ReactDOM.render(
 			<App />
 		</BrowserRouter>
 	</ApolloProvider>,
-	document.getElementById('root'),
+	document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
