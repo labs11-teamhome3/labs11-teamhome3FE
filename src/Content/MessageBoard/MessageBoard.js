@@ -47,7 +47,7 @@ const Messageboard = styled.div`
 
 	${mediaQueryFor.mdDevice`
     width: 100%;
-  `}
+  `};
 `;
 
 const MessagesContainer = styled.div`
@@ -69,7 +69,7 @@ const MessagesContainer = styled.div`
 	${mediaQueryFor.mdDevice`
 		margin-bottom: 10px;
 		width: 100%;
-	`}
+	`};
 `;
 
 const ContainerTitle = styled.div`
@@ -119,7 +119,7 @@ class MessageBoard extends React.Component {
 		//temporary url
 		this.URI =
 			process.env.NODE_ENV === 'production'
-				? 'https://team-home-2-graphql-mongodb.herokuapp.com/invite'
+				? 'https://labs-manaje.herokuapp.com/invite'
 				: 'http://localhost:5000/invite';
 		this.state = {
 			showModal: false,
