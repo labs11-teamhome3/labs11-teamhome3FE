@@ -9,12 +9,16 @@ import Select from '@material-ui/core/Select';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import { MenuItem } from '@material-ui/core';
 
+// ---------------- Components ---------------------- //
+import TodoLists from './TodoList/TodoLists';
+
 const TodoContainer = styled.div`
 	padding: 10px;
 	padding-bottom: 20px;
 	border: 2px solid #4a4550;
 	position: relative;
 	margin: 0;
+	padding-top: 20px;
 	form {
 		height: 50px;
 		select {
@@ -61,6 +65,7 @@ const TodoTabContainer = props => {
 				<ContainerTitle>
 					<p>TODOS</p>
 				</ContainerTitle>
+				<TodoLists />
 			</TodoContainer>
 		</MainContainer>
 	);
