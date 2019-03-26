@@ -6,6 +6,7 @@ import MessageBoard from './MessageBoard/MessageBoard';
 import ActivityTimeline from './ActivityTimeline/ActivityTimeline';
 import FABComponent from './FloatingActionButtons';
 import DocumentsTab from './DocumentsTab/TabContainer';
+import TodoTabContainer from './TodosTab/TodoTabContainer';
 
 // ---------------- gql ---------------------- //
 import mediaQueryFor from '../_global_styles/responsive_querie';
@@ -157,6 +158,11 @@ class ContentContainer extends React.PureComponent {
 											classes={{ label: classes.label }}
 											label="Documents"
 										/>
+
+										<StyledTab
+											classes={{ label: classes.label }}
+											label="TODOs"
+										/>
 									</Tabs>
 								</StyledPaper>
 								{/* The content that each tab corresponds to. 
@@ -178,6 +184,9 @@ class ContentContainer extends React.PureComponent {
 									</div>
 									<div dir={theme.direction}>
 										<DocumentsTab {...this.props} team={findTeam} />
+									</div>
+									<div dir={theme.direction}>
+										<TodoTabContainer {...this.props} team={findTeam} />
 									</div>
 								</SwipeableViews>
 								{/* All the FAB buttons are located below */}
