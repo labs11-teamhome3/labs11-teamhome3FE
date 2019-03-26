@@ -13,6 +13,8 @@ const URI =
 		? 'https://labs-manaje.herokuapp.com/graphql'
 		: 'http://localhost:5000/graphql';
 
+console.log(URI);
+
 const client = new ApolloClient({
 	uri: URI,
 	request: operation => {
