@@ -16,6 +16,7 @@ import { colors } from '../colorVariables';
 import AddMessage from './MessageBoard/AddMessage';
 import AddFolder from './DocumentsTab/Folders/AddFolder';
 import AddDocument from './DocumentsTab/Documents/AddDocument';
+import CreateTodoModal from './TodosTab/TodoModal/CreateTodoModal';
 
 // ---------------- Styled Components ---------------------- //
 const AddContentBtn = styled(Fab)`
@@ -53,7 +54,8 @@ class FloatingActionButton extends React.Component {
 		this.state = {
 			showAddMessageModal: false,
 			showAddFolderModal: false,
-			showAddDocModal: false
+			showAddDocModal: false,
+			showTodoModal: false
 		};
 	}
 
@@ -72,6 +74,12 @@ class FloatingActionButton extends React.Component {
 	toggleAddDocHandler = () => {
 		this.setState(prevState => ({
 			showAddDocModal: !prevState.showAddDocModal
+		}));
+	};
+
+	toggleAddTodoHandler = () => {
+		this.setState(prevState => ({
+			showTodoModal: !prevState.showTodoModal
 		}));
 	};
 
@@ -141,6 +149,24 @@ class FloatingActionButton extends React.Component {
 					</MiniBtn>
 				</Zoom>
 				<Zoom
+					in={value === 3}
+					timeout={transitionDuration}
+					style={{
+						transitionDelay: `${value === 2 ? transitionDuration.exit : 0}ms`
+					}}
+					unmountOnExit
+				>
+					<Tooltip
+						title={'Add Todo List'}
+						aria-label={'Add Todo List'}
+						classes={{ tooltip: classes.styledTooltip }}
+					>
+						<AddContentBtn onClick={this.toggleAddTodoHandler}>
+							<AddIcon />
+						</AddContentBtn>
+					</Tooltip>
+				</Zoom>
+				<Zoom
 					in={showFABMenu && value === 2}
 					timeout={transitionDuration}
 					style={{
@@ -173,6 +199,10 @@ class FloatingActionButton extends React.Component {
 					open={this.state.showAddDocModal}
 					team={this.props.team._id}
 					user={this.props.currentUser._id}
+				/>
+				<CreateTodoModal
+					hideModal={this.toggleAddTodoHandler}
+					open={this.state.showTodoModal}
 				/>
 			</>
 		);
