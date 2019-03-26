@@ -141,6 +141,24 @@ class FloatingActionButton extends React.Component {
 					</MiniBtn>
 				</Zoom>
 				<Zoom
+					in={value === 3}
+					timeout={transitionDuration}
+					style={{
+						transitionDelay: `${value === 2 ? transitionDuration.exit : 0}ms`
+					}}
+					unmountOnExit
+				>
+					<Tooltip
+						title={'Add Todo List'}
+						aria-label={'Add Todo List'}
+						classes={{ tooltip: classes.styledTooltip }}
+					>
+						<AddContentBtn onClick={_ => alert('this will do something later')}>
+							<AddIcon />
+						</AddContentBtn>
+					</Tooltip>
+				</Zoom>
+				<Zoom
 					in={showFABMenu && value === 2}
 					timeout={transitionDuration}
 					style={{
