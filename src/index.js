@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const URI =
 	process.env.NODE_ENV === 'production'
 		? 'https://labs-manaje.herokuapp.com/graphql'
-		: 'http://localhost:5000/graphql';
+		: 'https://manaje-be-8de8017c47.herokuapp.com/labs11-teamhome3BE-refactor/dev/graphql/';
 
 console.log(URI);
 
